@@ -1,8 +1,12 @@
+import 'package:ayurseva/controller/login_provider.dart';
 import 'package:ayurseva/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [ChangeNotifierProvider(create: (ctx)=>LoginProvider())],
+    child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
